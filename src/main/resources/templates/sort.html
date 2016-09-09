@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sorting numbers</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p>Current request:</p>
+<p th:text="'Original array: ' + ${origin}" ></p>
+<p th:text="'Sorted array: ' + ${result}" ></p>
+
+<p>Complete request list:</p>
+<table>
+    <thead>
+    <tr>
+        <th>Original array</th>
+        <th>Sorted array</th>
+        <th>Swap count</th>
+        <th>Execution time (nano seconds)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="res : ${results}">
+        <td th:text="${res.getOriginArray()}"></td>
+        <td th:text="${res.getResultArray()}"></td>
+        <td th:text="${res.getSwapCount()}"></td>
+        <td th:text="${res.getExecTime()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
