@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Sorting numbers</title>
+    <title>Sort random numbers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
     <link rel="stylesheet" href="css/styling.css">
@@ -11,7 +11,7 @@
 <body ng-controller="SortController">
 <div class="container">
     <h1>Sort random numbers</h1>
-    <div class="row">
+    <div class="row top-spacing">
         <form ng-submit="insertNumbers()">
             <div class="form-group">
                 <label for="inputNumbers">Enter a comma separated list of numbers</label>
@@ -19,7 +19,7 @@
                        required placeholder="Format: 1,2,3,4,5"/>
             </div>
             <div class="alert-danger" ng-if="errorMsg">{{errorMsg}}</div>
-            <div class="control-group">
+            <div class="control-group top-spacing">
                 <input type="submit" value="Sort numbers" class="btn btn-primary"/>
             </div>
         </form>
