@@ -1,9 +1,11 @@
 package sorting;
 
 
-import javax.persistence.Basic;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Arrays;
 
@@ -11,27 +13,27 @@ import java.util.Arrays;
 public class SortResult {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Basic(optional = false)
+    @JsonProperty
     private String originArray;
 
-    @Basic(optional = false)
+    @JsonProperty
     private String resultArray;
 
-    @Basic(optional = false)
+    @JsonProperty
     private int swapCount = 0;
 
-    @Basic(optional = false)
+    @JsonProperty
     private long execTime = 0; //nano seconds
 
-    public SortResult() { //hibernate wants a no-args constructor
+    public SortResult() {
     }
 
-    public SortResult(int[] originArray) {
-        this.originArray = Arrays.toString(originArray);
-        this.resultArray = Arrays.toString(sort(originArray));
+    public SortResult(int[] origin) {
+        this.originArray = Arrays.toString(origin);
+        this.resultArray = Arrays.toString(sort(origin));
     }
 
     private int[] sort(int[] arr) {
@@ -53,19 +55,11 @@ public class SortResult {
         return arr;
     }
 
-    public int getSwapCount() {
-        return swapCount;
-    }
-
-    public String getResultArray() {
+    String getResultArray() {
         return resultArray;
     }
 
-    public String getOriginArray() {
-        return originArray;
-    }
-
-    public long getExecTime() {
-        return execTime;
+    int getSwapCount() {
+        return swapCount;
     }
 }
