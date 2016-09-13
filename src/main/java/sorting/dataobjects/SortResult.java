@@ -1,4 +1,4 @@
-package sorting;
+package sorting.dataobjects;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;

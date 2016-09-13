@@ -1,4 +1,4 @@
-package sorting;
+package sorting.dataobjects;
 
 import org.junit.Assert;
 import org.junit.Test;

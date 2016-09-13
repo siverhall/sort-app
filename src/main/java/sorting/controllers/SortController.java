@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import sorting.SortResult;
-import sorting.SortResultRepo;
+import sorting.dataobjects.SortResult;
+import sorting.repos.SortResultRepo;
 
 import java.util.Arrays;
 
